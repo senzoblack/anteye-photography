@@ -1,0 +1,8 @@
+# Local deployment configuration and secrets
+.env
+.env.local
+.env.*.local
+.vercel
+
+# Keep the safe variable template in version control.
+!.env.example

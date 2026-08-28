@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ant-Eye Studio | Portrait &amp; Editorial Photographer in Durban</title>
+<meta name="description" content="Ant-Eye is a Durban portrait and editorial photography studio, available for brand, event, and personal shoots across South Africa.">
+<meta name="author" content="Ant-Eye Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d0d0c">
+<link rel="canonical" href="https://anteye.media/">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:site_name" content="Ant-Eye Studio">
+<meta property="og:title" content="Ant-Eye Studio | Portrait &amp; Editorial Photographer in Durban">
+<meta property="og:description" content="Portrait and editorial photography from Durban, available across South Africa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anteye.media/">
+<meta property="og:image" content="https://anteye.media/images/_anteye_1728500959_3475240391101818361_1198388391.jpg">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="854">
+<meta property="og:image:alt" content="Editorial event photography by Ant-Eye Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ant-Eye Studio | Portrait &amp; Editorial Photographer in Durban">
+<meta name="twitter:description" content="Portrait and editorial photography from Durban, available across South Africa.">
+<meta name="twitter:image" content="https://anteye.media/images/_anteye_1728500959_3475240391101818361_1198388391.jpg">
+<!-- Google Analytics: add your Measurement ID (for example, G-XXXXXXXXXX) between the quotes to enable tracking. -->
+<script>
+  window.ANTEYE_GA_MEASUREMENT_ID = '';
+  if (/^G-[A-Z0-9]+$/i.test(window.ANTEYE_GA_MEASUREMENT_ID)) {
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.ANTEYE_GA_MEASUREMENT_ID;
+    document.head.appendChild(analyticsScript);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', window.ANTEYE_GA_MEASUREMENT_ID);
+  }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "name": "Ant-Eye Studio",
+  "description": "Portrait and editorial photography studio based in Durban, serving clients across South Africa.",
+  "url": "https://anteye.media/",
+  "image": "https://anteye.media/images/_anteye_1728500959_3475240391101818361_1198388391.jpg",
+  "email": "info@anteye.media",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Durban",
+    "addressRegion": "KwaZulu-Natal",
+    "addressCountry": "ZA"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "South Africa"
+  },
+  "sameAs": ["https://www.instagram.com/_anteye/"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- Three.js WebGL Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<canvas id="cursor-canvas" aria-hidden="true"></canvas>
+<div class="custom-cursor-wrap" id="custom-cursor" aria-hidden="true">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="cursor-ticks">
+    <div class="cursor-tick t-top"></div>
+    <div class="cursor-tick t-right"></div>
+    <div class="cursor-tick t-bottom"></div>
+    <div class="cursor-tick t-left"></div>
+  </div>
+  <div class="cursor-shutter" id="cursor-shutter"></div>
+</div>
+<div class="grain"></div>
+
+<nav class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#feed" class="mobile-link">Feed</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#contact" class="mobile-link">Enquire</a>
+</nav>
+
+<header id="site-header">
+  <div class="logo">ant<span>&mdash;</span>eye</div>
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#feed">Feed</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Enquire</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+<section class="hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <div class="iris" aria-hidden="true">
+    <svg viewBox="0 0 140 140">
+      <g class="iris-blade"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+      <g class="iris-blade" style="transform:rotate(60deg)"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+      <g class="iris-blade" style="transform:rotate(120deg)"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+      <g class="iris-blade" style="transform:rotate(180deg)"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+      <g class="iris-blade" style="transform:rotate(240deg)"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+      <g class="iris-blade" style="transform:rotate(300deg)"><polygon points="70,70 70,0 110,10" fill="#0d0d0c"/></g>
+    </svg>
+  </div>
+  <div class="hero-copy">
+    <div class="hero-eyebrow mono">Durban studio &mdash; booking nationwide, 2026</div>
+    <h1 class="hero-title">Photography that <em>looks</em> before it shoots.</h1>
+    <p class="hero-sub">Ant&#8209;Eye is a portrait and editorial practice based in Durban, working with clients right across South Africa &mdash; from the coast to the Karoo.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a session &#x2197;</a>
+      <a href="https://www.instagram.com/_anteye/" target="_blank" rel="noopener" class="mono" style="font-size:0.78rem;color:var(--stone);border-bottom:1px solid var(--line);padding-bottom:2px;">@_anteye on Instagram</a>
+    </div>
+    <div class="hero-meta mono">
+      <div><strong>Studio</strong>Ant&#8209;Eye</div>
+      <div><strong>Based</strong>Durban, KZN</div>
+      <div><strong>Coverage</strong>All of South Africa</div>
+    </div>
+  </div>
+
+  <div class="hero-collage" aria-hidden="true">
+    <div class="hc-col">
+      <div class="hc-frame">
+        <span class="hc-badge mono">Portrait &mdash; Durban</span>
+        <img src="images/_anteye_1715323019_3364695814419328118_1198388391.jpg" alt="Portrait shoot by Ant-Eye" loading="eager">
+      </div>
+      <div class="hc-frame">
+        <img src="images/_anteye_1739876056_3570661616700172182_1198388391.jpg" alt="Editorial portrait by Ant-Eye" loading="eager">
+      </div>
+    </div>
+    <div class="hc-col down">
+      <div class="hc-frame">
+        <img src="images/_anteye_1755886681_3704968477686840730_1198388391.webp" alt="Fashion shoot by Ant-Eye" loading="eager">
+      </div>
+      <div class="hc-frame">
+        <span class="hc-badge mono">Event coverage</span>
+        <img src="images/_anteye_1728500959_3475240391101818361_1198388391.jpg" alt="Event photography by Ant-Eye" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue mono">Scroll to explore</div>
+</section>
+
+<section id="work">
+  <div class="section-head" data-reveal>
+    <div>
+      <span class="section-num mono">01 &mdash; Selected Work</span>
+      <h2 class="section-title">The frame.</h2>
+    </div>
+    <p class="section-desc">A selection of work across portraiture, editorial, events, and brand &mdash; real sessions, real stories.</p>
+  </div>
+  <div class="gallery" data-reveal>
+    <div class="g-item">
+      <img src="images/_anteye_1739876056_3570661616708530642_1198388391.jpg" alt="Portrait session" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Portrait Study</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/1.8</b> 1/200 ISO200</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1728500959_3475240391101690894_1198388391.jpg" alt="Event coverage" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Live Event</span><span class="cap-loc mono">KZN &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/250 ISO1600</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1755886681_3704968477695218191_1198388391.webp" alt="Fashion editorial" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Editorial</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/2</b> 1/320 ISO400</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1739876056_3570661616708741734_1198388391.jpg" alt="Street portrait" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Street Portrait</span><span class="cap-loc mono">Joburg &middot; 2025</span></span><span class="exif mono"><b>f/1.4</b> 1/500 ISO320</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1755634100_3702849676006464938_1198388391.webp" alt="Lifestyle portrait" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Lifestyle</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/400 ISO200</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1755634100_3702849675998032120_1198388391.webp" alt="Concert photography" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Concert Coverage</span><span class="cap-loc mono">KZN &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/160 ISO3200</span></div>
+    </div>
+    <div class="g-item">
+      <img src="images/_anteye_1755886681_3704968477695236885_1198388391.webp" alt="Portrait shoot" loading="lazy">
+      <div class="g-caption"><span><span class="cap-title">Close Portrait</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/1.8</b> 1/250 ISO160</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head" data-reveal>
+    <div>
+      <span class="section-num mono">02 &mdash; What I Offer</span>
+      <h2 class="section-title">Services.</h2>
+    </div>
+    <p class="section-desc">From intimate portrait sessions to full editorial productions &mdash; based in Durban, available to travel anywhere in South Africa.</p>
+  </div>
+  <div class="services-grid" data-reveal>
+    <div class="service-card">
+      <span class="service-num mono">01</span>
+      <h3>Portraiture</h3>
+      <p>Individual and family sessions shot on location or in studio, built around natural light and real expression.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">02</span>
+      <h3>Editorial &amp; Story</h3>
+      <p>Concept-driven shoots for magazines, lookbooks, and personal projects &mdash; planned like a short film, not a checklist.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">03</span>
+      <h3>Brand &amp; Product</h3>
+      <p>Clean, considered imagery for small businesses and brands who need their product to feel as good as it is.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">04</span>
+      <h3>Events &amp; Travel</h3>
+      <p>Documentary-style coverage for events and travel commissions anywhere across South Africa, on short notice.</p>
+    </div>
+  </div>
+</section>
+
+<section id="clients" style="padding-top:5vw;padding-bottom:5vw;">
+  <div class="section-head" data-reveal style="margin-bottom:2.6rem;">
+    <div>
+      <span class="section-num mono">03 &mdash; Trusted By</span>
+      <h2 class="section-title">Clients.</h2>
+    </div>
+    <p class="section-desc">A selection of brands and studios Ant&#8209;Eye has shot for across South Africa.</p>
+  </div>
+  <div class="logo-marquee" data-reveal>
+    <div class="logo-track">
+      <div class="logo-item mono">NORTHSHORE&nbsp;MEDIA</div>
+      <div class="logo-item mono">SALT&nbsp;&amp;&nbsp;PEPPER&nbsp;CO.</div>
+      <div class="logo-item mono">DUNE&nbsp;APPAREL</div>
+      <div class="logo-item mono">HARBOUR&nbsp;HOTELS</div>
+      <div class="logo-item mono">KIN&nbsp;STUDIO</div>
+      <div class="logo-item mono">VELD&nbsp;MAGAZINE</div>
+      <div class="logo-item mono">ECHO&nbsp;RECORDS</div>
+      <div class="logo-item mono">FYNBOS&nbsp;&amp;&nbsp;CO.</div>
+      <div class="logo-item mono" aria-hidden="true">NORTHSHORE&nbsp;MEDIA</div>
+      <div class="logo-item mono" aria-hidden="true">SALT&nbsp;&amp;&nbsp;PEPPER&nbsp;CO.</div>
+      <div class="logo-item mono" aria-hidden="true">DUNE&nbsp;APPAREL</div>
+      <div class="logo-item mono" aria-hidden="true">HARBOUR&nbsp;HOTELS</div>
+      <div class="logo-item mono" aria-hidden="true">KIN&nbsp;STUDIO</div>
+      <div class="logo-item mono" aria-hidden="true">VELD&nbsp;MAGAZINE</div>
+      <div class="logo-item mono" aria-hidden="true">ECHO&nbsp;RECORDS</div>
+      <div class="logo-item mono" aria-hidden="true">FYNBOS&nbsp;&amp;&nbsp;CO.</div>
+    </div>
+  </div>
+</section>
+
+<section id="feed">
+  <div class="insta-head" data-reveal>
+    <div>
+      <span class="section-num mono">04 &mdash; Live Feed</span>
+      <h2 class="section-title">@_anteye</h2>
+    </div>
+    <a class="insta-follow mono" href="https://www.instagram.com/_anteye/" target="_blank" rel="noopener">Follow on Instagram &#x2197;</a>
+  </div>
+  <div class="insta-grid" data-reveal>
+    <div class="insta-cell"><img src="images/_anteye_1757246785_3716377853147888202_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+    <div class="insta-cell"><img src="images/_anteye_1757246785_3716377853147890617_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+    <div class="insta-cell"><img src="images/_anteye_1757246785_3716377853147898793_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+    <div class="insta-cell"><img src="images/_anteye_1755886681_3704968478013998665_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+    <div class="insta-cell"><img src="images/_anteye_1755886681_3704968477703626442_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+    <div class="insta-cell"><img src="images/_anteye_1755886681_3704968477703624139_1198388391.webp" alt="Ant-Eye Instagram post" loading="lazy"><div class="ic-overlay"><span class="ic-icon">&#9825;</span></div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head" data-reveal>
+    <div>
+      <span class="section-num mono">05 &mdash; The Studio</span>
+      <h2 class="section-title">Behind the lens.</h2>
+    </div>
+  </div>
+  <div class="about" data-reveal>
+    <div class="about-frame">
+      <img src="images/_anteye_1738487392_3559012657812668601_1198388391.jpg" alt="Ant-Eye photographer at work" loading="lazy">
+      <div class="tag mono">Ant&#8209;Eye, on set</div>
+    </div>
+    <div class="about-text">
+      <p>Every session starts the same way &mdash; watching, before a single frame is shot.</p>
+      <p>Ant&#8209;Eye Studio is a portrait and editorial practice built on patience: reading a room's light, letting a subject settle, and shooting only once it feels true rather than posed. The result is work that holds up outside the feed &mdash; on a wall, in print, years from now.</p>
+      <p>Based in Durban and available for travel, taking on portrait sessions, editorial stories, and small brand shoots right across South Africa.</p>
+      <div class="stat-row">
+        <div><strong>7+</strong><span>Years shooting</span></div>
+        <div><strong>150+</strong><span>Sessions delivered</span></div>
+        <div><strong>2</strong><span>Continents worked</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-head" data-reveal>
+    <div>
+      <span class="section-num mono">06 &mdash; Client Words</span>
+      <h2 class="section-title">Kind words.</h2>
+    </div>
+    <p class="section-desc">A few notes from people Ant&#8209;Eye has worked with, from Durban studio sessions to shoots on the road.</p>
+  </div>
+  <div class="testi-grid" data-reveal>
+    <div class="testi-card">
+      <span class="testi-quote-mark">&ldquo;</span>
+      <p class="testi-text">Made the whole session feel effortless &mdash; we forgot the camera was even there halfway through, which is exactly why the photos feel so real.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><img src="images/_anteye_1739876056_3570661617018938800_1198388391.jpg" alt="" loading="lazy"></div>
+        <div><strong>Naledi K.</strong><span>Family portrait, Durban</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote-mark">&ldquo;</span>
+      <p class="testi-text">Flew out to Cape Town for our shoot and delivered a gallery that felt like a proper editorial story, not just a set of product shots.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><img src="images/_anteye_1739876056_3570661617027468803_1198388391.jpg" alt="" loading="lazy"></div>
+        <div><strong>Sipho M.</strong><span>Brand shoot, Dune Apparel</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote-mark">&ldquo;</span>
+      <p class="testi-text">Booked for our engagement shoot on the Durban beachfront &mdash; the light, the timing, the whole feel of the gallery was exactly what we wanted.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><img src="images/_anteye_1739876056_3570661617052531922_1198388391.jpg" alt="" loading="lazy"></div>
+        <div><strong>Amanda &amp; Ryan</strong><span>Engagement session</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band" data-reveal>
+  <div>
+    <h2>Need photography for your next project?</h2>
+    <p>Based in Durban, available to shoot anywhere in South Africa &mdash; let's talk about it.</p>
+  </div>
+  <a href="#contact" class="btn-primary">Get in touch &#x2197;</a>
+</div>
+
+<section id="contact">
+  <div class="section-head" data-reveal>
+    <div>
+      <span class="section-num mono">07 &mdash; Enquiries</span>
+      <h2 class="section-title">Book a session.</h2>
+    </div>
+    <p class="section-desc">Tell me about the shoot &mdash; date, location, and the story you want told. I reply within 48 hours.</p>
+  </div>
+  <div class="contact-wrap" data-reveal>
+    <div class="contact-info">
+      <p>For bookings, collaborations, or press &mdash; reach out directly, or use the form and it'll land straight in the inbox.</p>
+      <div class="contact-line">
+        <span class="label mono">Email</span>
+        <a href="mailto:info@anteye.media">info@anteye.media</a>
+      </div>
+      <div class="contact-line">
+        <span class="label mono">Instagram</span>
+        <a href="https://www.instagram.com/_anteye/" target="_blank" rel="noopener">@_anteye</a>
+      </div>
+      <div class="contact-line">
+        <span class="label mono">Based in</span>
+        <span class="value">Durban &mdash; available nationwide</span>
+      </div>
+    </div>
+    <div>
+      <!-- Add the studio WhatsApp number in international format, digits only (for example, 27821234567). -->
+      <form id="enquiry-form" data-whatsapp-number="">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="type">Shoot type</label>
+            <select id="type" name="type">
+              <option>Portrait session</option>
+              <option>Editorial / Story</option>
+              <option>Brand / Product</option>
+              <option>Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Preferred date</label>
+            <input type="date" id="date" name="date">
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Tell me about it</label>
+          <textarea id="message" name="message" required placeholder="Location, vision, timeline..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send via WhatsApp &#x2197;</button>
+        <p class="form-note">Opens WhatsApp with your enquiry filled in and ready to send.</p>
+      </form>
+      <div class="form-success" id="form-success">WhatsApp is ready with your message &mdash; just hit send. Talk soon.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="mono">&copy; 2026 Ant&#8209;Eye Studio &mdash; Durban, South Africa</div>
+  <div class="mono">CREATED BY <a href="https://blkstudio.space/" target="_blank" rel="noopener">BLK STUDIO</a></div>
+  <div class="foot-links">
+    <a href="https://www.instagram.com/_anteye/" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:info@anteye.media">Email</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Book</a>
+  </div>
+</footer>
+
+<!-- Main Application Script -->
+<script src="main.js" defer></script>
+</body>
+</html>
