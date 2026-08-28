@@ -482,35 +482,17 @@
     <div>
       <!-- Add the studio WhatsApp number in international format, digits only (for example, 27821234567). -->
       <form id="enquiry-form" data-whatsapp-number="">
-      <div class="form-row">
+        <div class="form-row">
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required placeholder="Your full name">
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="budget">Estimated budget</label>
-          <select id="budget" name="budget">
-            <option value="Not sure yet">Not sure yet</option>
-            <option>Under R5 000</option>
-            <option>R5 000 &ndash; R10 000</option>
-            <option>R10 000 &ndash; R25 000</option>
-            <option>R25 000+</option>
-          </select>
-        </div>
-        <div class="field">
-          <span class="field-label mono">Reply via</span>
-          <div class="reply-options">
-            <label><input type="radio" name="reply-via" value="WhatsApp" checked> WhatsApp</label>
-            <label><input type="radio" name="reply-via" value="Email"> Email</label>
           </div>
-        </div>
-      </div>
           <div class="field">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required placeholder="you@email.com">
           </div>
         </div>
+
         <div class="form-row">
           <div class="field">
             <label for="type">Shoot type</label>
@@ -527,14 +509,41 @@
             <input type="date" id="date" name="date">
           </div>
         </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="budget">Estimated budget</label>
+            <select id="budget" name="budget">
+              <option value="Not sure yet">Not sure yet</option>
+              <option>Under R5 000</option>
+              <option>R5 000 &ndash; R10 000</option>
+              <option>R10 000 &ndash; R25 000</option>
+              <option>R25 000+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Reply via</label>
+            <div class="reply-options mono">
+              <label class="reply-pill">
+                <input type="radio" name="reply-via" value="WhatsApp" checked>
+                <span>WhatsApp</span>
+              </label>
+              <label class="reply-pill">
+                <input type="radio" name="reply-via" value="Email">
+                <span>Email</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div class="field">
           <label for="message">Tell me about it</label>
           <textarea id="message" name="message" required placeholder="Location, vision, timeline..."></textarea>
         </div>
         <button type="submit" class="submit-btn" id="submit-btn">Send via WhatsApp &#x2197;</button>
-        <p class="form-note">Opens WhatsApp with your enquiry filled in and ready to send.</p>
+        <p class="form-note" id="form-note">Opens WhatsApp with your enquiry filled in and ready to send.</p>
       </form>
-      <div class="form-success" id="form-success">WhatsApp is ready with your message &mdash; just hit send. Talk soon.</div>
+      <div class="form-success" id="form-success">Your message is prepared and ready &mdash; talk soon.</div>
     </div>
   </div>
 </section>

@@ -139,6 +139,27 @@
         formSuccess.style.display = 'block';
       }
     });
+
+    const submitBtn = document.getElementById('submit-btn');
+    const formNote = document.getElementById('form-note');
+    const replyRadios = document.querySelectorAll('input[name="reply-via"]');
+
+    function updateReplyMethodUI() {
+      const checked = document.querySelector('input[name="reply-via"]:checked');
+      const method = checked ? checked.value : 'WhatsApp';
+      if (submitBtn) {
+        submitBtn.innerHTML = method === 'Email' ? 'Send via Email &#x2197;' : 'Send via WhatsApp &#x2197;';
+      }
+      if (formNote) {
+        formNote.textContent = method === 'Email' 
+          ? 'Opens your email client with your enquiry details prepared.' 
+          : 'Opens WhatsApp with your enquiry filled in and ready to send.';
+      }
+    }
+
+    replyRadios.forEach(function (r) {
+      r.addEventListener('change', updateReplyMethodUI);
+    });
   }
 
   // Pre-fill enquiry form helper
