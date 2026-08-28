@@ -629,7 +629,7 @@ nav a:hover::after {
   color: var(--paper-dim);
   margin-bottom: 1.4rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  flex-wrap: wrap;
+  white-space: nowrap;
 }
 
 .avail-dot {
@@ -2398,32 +2398,63 @@ dialog.project-dialog[open] .dialog-container {
   .hero {
     display: block;
     min-height: 0;
-    padding: 7.5rem 1.625rem 4rem;
+    padding: 7rem 1.4rem 3.5rem;
+  }
+  .availability-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 0.65rem;
+    margin-bottom: 1.2rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-sizing: border-box;
   }
   .hero-eyebrow {
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    margin-bottom: 1.4rem;
+    line-height: 1.4;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
   }
   .hero-sub {
-    margin-top: 1.8rem;
+    margin-top: 1.2rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
   }
   .hero-actions {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
-    gap: 2.4rem;
-    margin-top: 2.8rem;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .hero-actions .btn-primary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 1.1rem 1.6rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+  }
+  .hero-actions a.mono {
+    text-align: center;
+    align-self: center;
+    margin-top: 0.2rem;
   }
   .hero-meta {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3rem 2rem;
-    margin-top: 3.6rem;
+    gap: 2.4rem 1.5rem;
+    margin-top: 3rem;
   }
   .hero-meta div:last-child {
     grid-column: 1 / -1;
   }
   h1.hero-title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    line-height: 1.1;
   }
   .grade-compare {
     aspect-ratio: 4/3;
