@@ -78,6 +78,7 @@
     <div class="cursor-tick t-bottom"></div>
     <div class="cursor-tick t-left"></div>
   </div>
+  <div class="cursor-label mono" id="cursor-label">VIEW STORY</div>
   <div class="cursor-shutter" id="cursor-shutter"></div>
 </div>
 <div class="grain"></div>
@@ -127,6 +128,11 @@
     </svg>
   </div>
   <div class="hero-copy">
+    <div class="availability-badge mono" id="hero-availability">
+      <span class="avail-dot"></span>
+      <span class="avail-text">Now booking: <strong>Sep &ndash; Oct 2026</strong> &bull; Durban &amp; Nationwide</span>
+      <a href="#contact" class="avail-link">Reserve slot &#x2197;</a>
+    </div>
     <div class="hero-eyebrow mono">Durban studio &mdash; booking nationwide, 2026</div>
     <h1 class="hero-title">Photography that <em>looks</em> before it shoots.</h1>
     <p class="hero-sub">Ant&#8209;Eye is a portrait and editorial practice based in Durban, working with clients right across South Africa &mdash; from the coast to the Karoo.</p>
@@ -171,37 +177,114 @@
       <span class="section-num mono">01 &mdash; Selected Work</span>
       <h2 class="section-title">The frame.</h2>
     </div>
-    <p class="section-desc">A selection of work across portraiture, editorial, events, and brand &mdash; real sessions, real stories.</p>
+    <div class="work-tools">
+      <p class="section-desc">A selection of work across portraiture, editorial, events, and brand &mdash; click any frame to open its cinematic story.</p>
+      <button class="contact-sheet-toggle mono" id="contact-sheet-toggle" type="button" aria-pressed="false">Contact sheet <span aria-hidden="true">&#x229e;</span></button>
+    </div>
   </div>
-  <div class="gallery" data-reveal>
-    <div class="g-item">
+  <div class="gallery" id="portfolio-gallery" data-reveal>
+    <div class="g-item" data-project-id="0" role="button" tabindex="0" aria-label="Open Portrait Study project story">
+      <div class="g-frame-tag mono">01A</div>
       <img src="images/_anteye_1739876056_3570661616708530642_1198388391.jpg" alt="Portrait session" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Portrait Study</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/1.8</b> 1/200 ISO200</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Portrait Study</span>
+          <span class="cap-loc mono">Durban &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/1.8</b> 1/200 ISO200</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="1" role="button" tabindex="0" aria-label="Open Live Event project story">
+      <div class="g-frame-tag mono">02A</div>
       <img src="images/_anteye_1728500959_3475240391101690894_1198388391.jpg" alt="Event coverage" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Live Event</span><span class="cap-loc mono">KZN &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/250 ISO1600</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Live Event &mdash; After Dark</span>
+          <span class="cap-loc mono">KZN &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/2.8</b> 1/250 ISO1600</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="2" role="button" tabindex="0" aria-label="Open Editorial Fashion project story">
+      <div class="g-frame-tag mono">03A</div>
       <img src="images/_anteye_1755886681_3704968477695218191_1198388391.webp" alt="Fashion editorial" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Editorial</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/2</b> 1/320 ISO400</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Editorial &mdash; Coastal Light</span>
+          <span class="cap-loc mono">Durban &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/2.0</b> 1/320 ISO400</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="3" role="button" tabindex="0" aria-label="Open Street Portrait project story">
+      <div class="g-frame-tag mono">04A</div>
       <img src="images/_anteye_1739876056_3570661616708741734_1198388391.jpg" alt="Street portrait" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Street Portrait</span><span class="cap-loc mono">Joburg &middot; 2025</span></span><span class="exif mono"><b>f/1.4</b> 1/500 ISO320</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Street Portraiture</span>
+          <span class="cap-loc mono">Joburg &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/1.4</b> 1/500 ISO320</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="4" role="button" tabindex="0" aria-label="Open Lifestyle & Brand project story">
+      <div class="g-frame-tag mono">05A</div>
       <img src="images/_anteye_1755634100_3702849676006464938_1198388391.webp" alt="Lifestyle portrait" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Lifestyle</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/400 ISO200</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Kin Studio &mdash; Lifestyle</span>
+          <span class="cap-loc mono">Durban &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/2.8</b> 1/400 ISO200</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="5" role="button" tabindex="0" aria-label="Open Concert Coverage project story">
+      <div class="g-frame-tag mono">06A</div>
       <img src="images/_anteye_1755634100_3702849675998032120_1198388391.webp" alt="Concert photography" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Concert Coverage</span><span class="cap-loc mono">KZN &middot; 2025</span></span><span class="exif mono"><b>f/2.8</b> 1/160 ISO3200</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Echo Records &mdash; Tour Live</span>
+          <span class="cap-loc mono">KZN &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/2.8</b> 1/160 ISO3200</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
-    <div class="g-item">
+    <div class="g-item" data-project-id="6" role="button" tabindex="0" aria-label="Open Intimate Portraiture project story">
+      <div class="g-frame-tag mono">07A</div>
       <img src="images/_anteye_1755886681_3704968477695236885_1198388391.webp" alt="Portrait shoot" loading="lazy">
-      <div class="g-caption"><span><span class="cap-title">Close Portrait</span><span class="cap-loc mono">Durban &middot; 2025</span></span><span class="exif mono"><b>f/1.8</b> 1/250 ISO160</span></div>
+      <div class="g-caption">
+        <span>
+          <span class="cap-title">Intimate Character</span>
+          <span class="cap-loc mono">Durban &middot; 2025</span>
+        </span>
+        <span class="exif mono"><b>f/1.8</b> 1/250 ISO160</span>
+      </div>
+      <div class="g-hover-badge mono">View Story &#x2197;</div>
     </div>
+  </div>
+</section>
+
+<section class="reel-section" aria-labelledby="reel-title">
+  <div class="reel-copy" data-reveal>
+    <span class="section-num mono">Between the frames</span>
+    <h2 id="reel-title">The studio, <em>in motion.</em></h2>
+    <p>A living edit of portraits, places, and the moments just before the shutter. Move through the sequence or let it play.</p>
+    <div class="reel-controls">
+      <button class="reel-control mono" id="reel-prev" type="button" aria-label="Previous reel frame">&#x2190;</button>
+      <button class="reel-control mono" id="reel-play" type="button" aria-pressed="false">Play sequence</button>
+      <button class="reel-control mono" id="reel-next" type="button" aria-label="Next reel frame">&#x2192;</button>
+    </div>
+  </div>
+  <div class="studio-reel" id="studio-reel" data-reveal aria-live="polite">
+    <figure class="reel-frame is-active"><img src="images/_anteye_1739876056_3570661616700255544_1198388391.jpg" alt="Portrait in the Ant-Eye studio reel" loading="lazy"><figcaption class="mono">01 / LIGHT FINDING</figcaption></figure>
+    <figure class="reel-frame"><img src="images/_anteye_1728500959_3475240391101822670_1198388391.jpg" alt="Event scene in the Ant-Eye studio reel" loading="lazy"><figcaption class="mono">02 / AFTER DARK</figcaption></figure>
+    <figure class="reel-frame"><img src="images/_anteye_1755634100_3702849675998054383_1198388391.webp" alt="Lifestyle scene in the Ant-Eye studio reel" loading="lazy"><figcaption class="mono">03 / IN BETWEEN</figcaption></figure>
   </div>
 </section>
 
@@ -234,6 +317,21 @@
       <h3>Events &amp; Travel</h3>
       <p>Documentary-style coverage for events and travel commissions anywhere across South Africa, on short notice.</p>
     </div>
+  </div>
+</section>
+
+<section class="grade-section" aria-labelledby="grade-title">
+  <div class="grade-intro" data-reveal>
+    <span class="section-num mono">The finish</span>
+    <h2 id="grade-title">From light to <em>feeling.</em></h2>
+    <p>Drag across the frame to explore how a considered grade changes the atmosphere without losing the person inside it.</p>
+  </div>
+  <div class="grade-compare" id="grade-compare" data-reveal>
+    <img src="images/_anteye_1739876056_3570661616708579310_1198388391.jpg" alt="Portrait showing the Ant-Eye colour grade" loading="lazy">
+    <div class="grade-before" id="grade-before" aria-hidden="true"><img src="images/_anteye_1739876056_3570661616708579310_1198388391.jpg" alt=""></div>
+    <span class="grade-label grade-label-before mono">Base exposure</span>
+    <span class="grade-label grade-label-after mono">Final grade</span>
+    <input class="grade-range" id="grade-range" type="range" min="0" max="100" value="48" aria-label="Reveal final image grade">
   </div>
 </section>
 
@@ -384,11 +482,30 @@
     <div>
       <!-- Add the studio WhatsApp number in international format, digits only (for example, 27821234567). -->
       <form id="enquiry-form" data-whatsapp-number="">
-        <div class="form-row">
+      <div class="form-row">
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required placeholder="Your full name">
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="budget">Estimated budget</label>
+          <select id="budget" name="budget">
+            <option value="Not sure yet">Not sure yet</option>
+            <option>Under R5 000</option>
+            <option>R5 000 &ndash; R10 000</option>
+            <option>R10 000 &ndash; R25 000</option>
+            <option>R25 000+</option>
+          </select>
+        </div>
+        <div class="field">
+          <span class="field-label mono">Reply via</span>
+          <div class="reply-options">
+            <label><input type="radio" name="reply-via" value="WhatsApp" checked> WhatsApp</label>
+            <label><input type="radio" name="reply-via" value="Email"> Email</label>
           </div>
+        </div>
+      </div>
           <div class="field">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required placeholder="you@email.com">
@@ -423,6 +540,74 @@
 </section>
 
 </main>
+
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="project-title" aria-modal="true">
+  <div class="dialog-container">
+    <div class="dialog-top-bar">
+      <div class="dialog-tag mono" id="project-index">STORY 01 // 07</div>
+      <div class="dialog-hints mono">
+        <span><kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate</span>
+        <span><kbd>ESC</kbd> Close</span>
+      </div>
+      <button class="dialog-close mono" id="dialog-close" type="button" aria-label="Close project viewer">
+        <span>Close</span> <span class="close-icon">&times;</span>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <!-- Left / Media Column -->
+      <div class="dialog-media-col">
+        <div class="dialog-main-image-wrap">
+          <img id="dialog-image" src="" alt="Case study main view" loading="eager">
+          <div class="dialog-image-overlay">
+            <span class="dialog-frame-num mono" id="dialog-frame-num">FRAME 01 / 03</span>
+            <span class="dialog-exif-pill mono" id="dialog-image-exif">f/1.8 &middot; 1/200 &middot; ISO 200</span>
+          </div>
+        </div>
+        <!-- Filmstrip thumbnails sequence -->
+        <div class="dialog-sequence-strip" id="dialog-sequence-strip" aria-label="Project image sequence">
+          <!-- Populated dynamically with sequence frames -->
+        </div>
+      </div>
+
+      <!-- Right / Editorial Story Column -->
+      <div class="dialog-editorial-col">
+        <div class="dialog-header-meta">
+          <span class="dialog-category mono" id="project-category">EDITORIAL</span>
+          <h2 class="dialog-title" id="project-title">Portrait Study</h2>
+          <div class="dialog-meta-list mono">
+            <div class="dml-item"><span class="dml-label">Location</span><strong id="project-location">Durban, KZN</strong></div>
+            <div class="dml-item"><span class="dml-label">Client / Type</span><strong id="project-client">Personal Editorial</strong></div>
+            <div class="dml-item"><span class="dml-label">Year</span><strong id="project-year">2025</strong></div>
+          </div>
+        </div>
+
+        <div class="dialog-story-section">
+          <h3 class="dialog-subhead mono">Creative Note</h3>
+          <p class="dialog-story-text" id="project-story">A study in natural light, subtle gesture, and the atmosphere that emerges when a subject settles into the space without performance.</p>
+        </div>
+
+        <div class="dialog-tech-section">
+          <h3 class="dialog-subhead mono">Technical Recipe</h3>
+          <div class="dialog-tech-box mono" id="project-tech">
+            <div><span>Camera</span> <strong>Sony A7 IV</strong></div>
+            <div><span>Optics</span> <strong>50mm f/1.2 GM</strong></div>
+            <div><span>Lighting</span> <strong>Dusk ambient + reflector</strong></div>
+            <div><span>Colour</span> <strong>Ant-Eye Custom Film Grade</strong></div>
+          </div>
+        </div>
+
+        <div class="dialog-footer-actions">
+          <button type="button" class="btn-primary dialog-book-btn" id="dialog-book-btn">Book a shoot like this &#x2197;</button>
+          <div class="dialog-nav-controls">
+            <button class="dialog-nav-btn mono" id="project-prev" type="button" aria-label="Previous project">&larr; Prev</button>
+            <button class="dialog-nav-btn mono" id="project-next" type="button" aria-label="Next project">Next &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
 
 <footer>
   <div class="footer-brand">
