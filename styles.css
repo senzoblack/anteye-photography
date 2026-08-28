@@ -282,18 +282,106 @@ header.scrolled {
   border-bottom: 1px solid var(--line);
 }
 
+/* ==========================================================================
+   Photographer Icon & White Filter Styles
+   ========================================================================== */
+
+.photographer-white-filter {
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 101;
+  position: relative;
+  text-decoration: none;
+}
+
+.photographer-logo-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  display: block;
+}
+
+.logo-wrap:hover .photographer-logo-img {
+  transform: scale(1.12) rotate(-6deg);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(181, 67, 47, 0.7));
+}
+
 .logo {
   font-family: 'Fraunces', serif;
   font-weight: 600;
   font-size: 1.15rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  z-index: 101;
   position: relative;
 }
 
 .logo span {
   color: var(--accent-bright);
+}
+
+.hero-photographer-badge {
+  position: absolute;
+  top: 14%;
+  right: 6%;
+  width: 130px;
+  height: 130px;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.hero-photographer-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-studio-emblem {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+}
+
+.about-studio-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.75;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-brand:hover .footer-logo-img {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 nav ul {
